@@ -70,50 +70,25 @@
 <body class="text-center">
     <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto"  >
-        <center>
-            <div class="inner" style="width: 900px">
-                <h3 class="masthead-brand"><a href="{% url 'index' %}">🌏EZtravel</a></h3>
-                <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link" href="{% url 'know' %}">공지사항</a>
-                    <a class="nav-link" href="{% url 'howto' %}">이용안내</a>
-                    {% if request.user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'logout' %}">로그아웃</a>
-                    {% else %}
-                        <a class="nav-link" href="{% url 'account:login' %}">로그인</a>
-                    {% endif %}
-                </nav>
-            </div>
-        </center>
+            <center>
+                <div class="inner" style="width: 900px">
+                    <h3 class="masthead-brand"><a href="{% url 'index' %}">🌏Song's blog</a></h3>
+                    <nav class="nav nav-masthead justify-content-center">
+                        <a class="nav-link" href="{% url 'know' %}">공지사항</a>
+                        <a class="nav-link" href="{% url 'howto' %}">이용안내</a>
+                </div>
+            </center>
         </header>
     
-        {% block content %}
+        
         <main role="main" class="inner cover">
             <br><br>
             <p class="lead">
-                {% if request.user.is_authenticated %}
-                    <center>
-                    <table><tr>
-                        <td><a href="{% url 'uimage' %}"><img src="{% static 'img/paint_1.png' %}" width=380px, height=400px><a></td>
-                        <td style="width:40px;"></td>
-                        <td><a href="{% url 'repo' %}"><img src="{% static 'img/paint_2.png' %}" width=380px, height=400px><a></td>
-                        <td style="width:40px;"></td>
-                        <td><a href="{% url 'reco' %}"><img src="{% static 'img/paint_3.png' %}" width=380px, height=400px><a></td>
-                    </tr></table>
-                    </center><br><br><br>
-                {% else %}
-                    <h1 class="cover-heading">EZ Travel</h1>
-                    <p class="lead">광고 속 그 장소가 궁금하다면?<br>
-                        인스타 속 그 장소가 궁금하다면?<br>
-                        사진을 업로드하고 해당 장소를 확인해보세요!<br><br></p>
-                    <a onclick="" style="cursor:pointer" id="alertStart"
-                        class="btn btn-lg btn-secondary">확인하러 가기</a>
-                {% endif %}
+                <h1 class="cover-heading">EZ Travel</h1>
             </p>
         </main>
-        {% endblock %}
         <footer class="mastfoot mt-auto">
             <div class="inner">
-                <p>Final project by <a href="https://github.com/song248/Final-project.git">1조</a>.</p>
             </div>
         </footer>
     </div>
